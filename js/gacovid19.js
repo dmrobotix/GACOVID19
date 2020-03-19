@@ -66,7 +66,7 @@ var layout = {
     showgrid: false,
     zeroline: false,
     showline: false,
-    showticklabels: false
+    showticklabels: true
   },
 
 
