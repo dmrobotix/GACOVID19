@@ -68,29 +68,10 @@ var layout = {
     showline: false,
     showticklabels: false
   },
-  autosize: false,
-  margin: {
-    autoexpand: false,
-    l: 100,
-    r: 20,
-    t: 100
-  },
+
+
   annotations: [
-    {
-      xref: 'paper',
-      yref: 'paper',
-      x: 0.0,
-      y: 1.05,
-      xanchor: 'left',
-      yanchor: 'bottom',
-      text: 'Georgia COVID-19 Confirmed Cases',
-      font:{
-        family: 'Lato',
-        size: 30,
-        color: 'rgb(37,37,37)'
-      },
-      showarrow: false
-    }
+  
   ]
 };
 

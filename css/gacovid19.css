@@ -20,6 +20,11 @@ h4 {
   padding: 25px;
 }
 
+#update {
+  font-size:9pt;
+  font-style:italic;
+}
+
 ul {
   font-family: 'Roboto', sans-serif;
   font-size:10pt;
