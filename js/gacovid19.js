@@ -43,8 +43,7 @@ var layout = {
   showlegend: false,
   plot_bgcolor: '#ccc',
   paper_bgcolor:'#ccc',
-  height: 600,
-  width: 600,
+
   xaxis: {
     showline: true,
     showgrid: false,
@@ -128,4 +127,6 @@ for( var i = 0 ; i < xData.length ; i++ ) {
   layout.annotations.push(result);
 }
 
-Plotly.newPlot('myDiv', data, layout);
+var config = {responsive: true}
+
+Plotly.newPlot('myDiv', data, layout,config);
