@@ -52,13 +52,14 @@ var layout = {
     linecolor: 'rgb(204,204,204)',
     linewidth: 2,
     autotick: false,
+    automargin: true,
     ticks: 'outside',
     tickcolor: 'rgb(204,204,204)',
     tickwidth: 2,
     ticklen: 5,
     tickfont: {
       family: 'Lato',
-      size: 12,
+      size: 10,
       color: 'rgb(82, 82, 82)'
     }
   },
