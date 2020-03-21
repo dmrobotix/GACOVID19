@@ -1,4 +1,4 @@
-Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', function(err, rows){
+Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv', function(err, rows){
   //https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv
   //https://www.margotbits.com/gacovid19/csv/gacounties.csv
 
@@ -42,9 +42,10 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         showlegend: false,
         plot_bgcolor: '#ccc',
         paper_bgcolor:'#ccc',
+        margin: { r: 40, t: 0, b: 0, l: 0 },
         geo: {
             scope: 'usa',
-            center: {lon: -84.9973362, lat: 32.6623862},
+            center: {lon: -83.5, lat: 32.658152},
             projection: {
                 type: 'albers usa',
                 scale: 6
