@@ -38,6 +38,8 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
 
     var layout = {
         showlegend: false,
+        plot_bgcolor: '#ccc',
+        paper_bgcolor:'#ccc',
         geo: {
             scope: 'usa',
             projection: {
