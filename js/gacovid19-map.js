@@ -1,4 +1,6 @@
 Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', function(err, rows){
+  //https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv
+  //https://www.margotbits.com/gacovid19/csv/gacounties.csv
 
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
@@ -42,8 +44,10 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         paper_bgcolor:'#ccc',
         geo: {
             scope: 'usa',
+            center: {lon: -84.9973362, lat: 32.6623862},
             projection: {
-                type: 'albers usa'
+                type: 'albers usa',
+                scale: 6
             },
             showland: true,
             landcolor: 'rgb(217, 217, 217)',
@@ -54,6 +58,11 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         },
     };
 
-    Plotly.newPlot("gaMap", data, layout, {showLink: false});
+    var config = {
+      responsive: true,
+      showLink: false
+    }
+
+    Plotly.newPlot("gaMap", data, layout, config);
 
 });
