@@ -5,17 +5,17 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
     }
 
     var cityName = unpack(rows, 'county'),
-        cityPop = unpack(rows, 'case'),
+        cityCases = unpack(rows, 'case'),
         cityLat = unpack(rows, 'lat'),
         cityLon = unpack(rows, 'lon'),
         color = [,"rgb(255,65,54)","rgb(133,20,75)","rgb(255,133,27)","lightgrey"],
         citySize = [],
         hoverText = [],
-        scale = 50000;
+        scale = 1;
 
-    for ( var i = 0 ; i < cityPop.length; i++) {
-        var currentSize = cityPop[i] / scale;
-        var currentText = cityName[i] + " pop: " + cityPop[i];
+    for ( var i = 0 ; i < cityCases.length; i++) {
+        var currentSize = cityCases[i] / scale;
+        var currentText = cityName[i] + " cases: " + cityCases[i];
         citySize.push(currentSize);
         hoverText.push(currentText);
     }
@@ -37,7 +37,6 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
     }];
 
     var layout = {
-        title: '2014 US City Populations',
         showlegend: false,
         geo: {
             scope: 'usa',
