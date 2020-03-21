@@ -1,4 +1,4 @@
-Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv', function(err, rows){
+Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', function(err, rows){
   //https://raw.githubusercontent.com/plotly/datasets/master/2014_us_cities.csv
   //https://www.margotbits.com/gacovid19/csv/gacounties.csv
 
