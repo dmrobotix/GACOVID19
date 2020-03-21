@@ -82,7 +82,7 @@ for( var i = 0 ; i < xData.length ; i++ ) {
     y: yData[i][0],
     xanchor: 'right',
     yanchor: 'middle',
-    text: labels[i],
+    text: '',
     showarrow: false,
     font: {
       family: 'Arial',
@@ -110,4 +110,4 @@ for( var i = 0 ; i < xData.length ; i++ ) {
 
 var config = {responsive: true}
 
-Plotly.newPlot('myDiv', data, layout,config);
+Plotly.newPlot('timeline', data, layout,config);
