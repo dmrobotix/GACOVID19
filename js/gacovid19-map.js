@@ -1,4 +1,4 @@
-Plotly.d3.csv('csv/gacounties.csv', function(err, rows){
+Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', function(err, rows){
 
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
