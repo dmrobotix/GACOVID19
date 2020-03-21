@@ -55,8 +55,8 @@ for ( var i = 0 ; i < xData.length ; i++ ) {
     }
   };
   var result2 = {
-    x: [xData[i][0], xData[i][11]],
-    y: [yData[i][0], yData[i][11]],
+    x: [xData[i][0]],
+    y: [yData[i][0]],
     type: 'scatter',
     mode: 'markers',
     marker: {
