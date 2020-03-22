@@ -2,14 +2,27 @@
 var xData = [
   [
     '3/1/20',
+    '3/2/20',
+    '3/5/20',
+    '3/9/20',
+    '3/11/20',
+    '3/12/20',
+    '3/13/20',
+    '3/14/20',
+    '3/16/20',
+    '3/17/20',
+    '3/18/20',
+    '3/19/20',
+    '3/20/20',
+    '3/21/20'
+],
+[
+  '3/1/20',
   '3/2/20',
   '3/5/20',
   '3/9/20',
   '3/11/20',
-  '3/13/20',
-  '3/14/20',
-  '3/16/20',
-  '3/17/20',
+  '3/12/20',
   '3/18/20',
   '3/19/20',
   '3/20/20',
@@ -25,6 +38,7 @@ var yData = [
     17,
     31,
     42,
+    42,
     64,
     121,
     146,
@@ -32,6 +46,18 @@ var yData = [
     287,
     485,
     555
+  ],
+  [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    4,
+    10,
+    14,
+    20
   ]
 ];
 
@@ -43,12 +69,15 @@ var labels = ['Confirmed'];
 
 var data = [];
 
+var names = ['Cases', 'Deaths'];
+
 for ( var i = 0 ; i < xData.length ; i++ ) {
   var result = {
     x: xData[i],
     y: yData[i],
     type: 'scatter',
     mode: 'lines',
+    name: names[i],
     line: {
       color: colors[i],
       width: lineSize[i]
@@ -59,12 +88,13 @@ for ( var i = 0 ; i < xData.length ; i++ ) {
     y: [yData[i][0]],
     type: 'scatter',
     mode: 'markers',
+    name:'',
     marker: {
       color: colors[i],
       size: 12
     }
   };
-  data.push(result, result2);
+  data.push(result);
 }
 
 var layout = {
