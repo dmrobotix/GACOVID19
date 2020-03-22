@@ -65,7 +65,7 @@ var yData = [
   ]
 ];
 
-var colors = ['rgba(67,67,67,1)', 'rgba(115,115,115,1)'];
+var colors = ['rgba(173,255,47,1)', 'rgba(0,191,255,1)'];
 
 var lineSize = [2, 2, 4, 2];
 
@@ -110,18 +110,18 @@ var layout = {
     showline: true,
     showgrid: false,
     showticklabels: true,
-    linecolor: 'rgb(204,204,204)',
+    linecolor: 'rgb(0,0,0)',
     linewidth: 2,
     autotick: false,
     automargin: true,
     ticks: 'outside',
-    tickcolor: 'rgb(204,204,204)',
+    tickcolor: 'rgb(0,0,0)',
     tickwidth: 2,
     ticklen: 5,
     tickfont: {
       family: 'Lato',
       size: 10,
-      color: 'rgb(82, 82, 82)'
+      color: 'rgb(0,0,0)'
     }
   },
   yaxis: {
