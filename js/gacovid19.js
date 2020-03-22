@@ -61,7 +61,7 @@ var yData = [
   ]
 ];
 
-var colors = ['rgba(67,67,67,1)'];
+var colors = ['rgba(67,67,67,1)', 'rgba(115,115,115,1)'];
 
 var lineSize = [2, 2, 4, 2];
 
@@ -99,8 +99,8 @@ for ( var i = 0 ; i < xData.length ; i++ ) {
 
 var layout = {
   showlegend: false,
-  plot_bgcolor: '#ccc',
-  paper_bgcolor:'#ccc',
+  plot_bgcolor: 'transparent',
+  paper_bgcolor:'transparent',
 
   xaxis: {
     showline: true,

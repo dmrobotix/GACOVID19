@@ -40,8 +40,8 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
 
     var layout = {
         showlegend: false,
-        plot_bgcolor: '#ccc',
-        paper_bgcolor:'#ccc',
+        plot_bgcolor: 'transparent',
+        paper_bgcolor:'transparent',
         margin: { r: 40, t: 0, b: 0, l: 0 },
         geo: {
             scope: 'usa',

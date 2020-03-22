@@ -1,14 +1,10 @@
 
 body {
-  background-color: #ccc !important;
+  background-color: #EBEEF0 !important;
 }
 div {
   font-family: 'Lato', sans-serif;
   word-wrap: break-word;
-}
-.stats {
-  font-weight: bold;
-  font-size: 20pt;
 }
 
 h4 {
@@ -16,8 +12,27 @@ h4 {
   text-transform: uppercase;
   font-size:14pt !important;
 }
+
+ul {
+  font-family: 'Roboto', sans-serif;
+  font-size:10pt;
+}
+
+p {
+  font-size:10pt;
+}
+
+.stats {
+  font-weight: bold;
+  font-size: 20pt;
+}
+
+#plot {
+  background-color: rgb(153,187,255,0.1) !important;
+}
 #sidebar {
-  background-color: rgba(255,255,255,0.11);
+  /*background-color: rgba(255,255,255,0.11);*/
+  background-color: rgba(144,240,198,0.1) !important;
   padding: 25px;
 }
 
@@ -27,14 +42,5 @@ h4 {
 }
 
 #links {
-  font-size:10pt;
-}
-
-ul {
-  font-family: 'Roboto', sans-serif;
-  font-size:10pt;
-}
-
-p {
   font-size:10pt;
 }
