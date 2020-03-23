@@ -29,7 +29,24 @@ var xData = [
   '3/20/20',
   '3/21/20',
   '3/22/20'
-]
+],
+/*[
+  '3/1/20',
+  '3/2/20',
+  '3/5/20',
+  '3/9/20',
+  '3/11/20',
+  '3/12/20',
+  '3/13/20',
+  '3/14/20',
+  '3/16/20',
+  '3/17/20',
+  '3/18/20',
+  '3/19/20',
+  '3/20/20',
+  '3/21/20',
+  '3/22/20'
+]*/
 ];
 
 var yData = [
@@ -48,7 +65,7 @@ var yData = [
     287,
     485,
     555,
-    600
+    620
   ],
   [
     0,
@@ -62,7 +79,24 @@ var yData = [
     14,
     20,
     23
-  ]
+  ],
+  /*[
+    Math.log(0),
+    Math.log(2),
+    Math.log(2),
+    Math.log(17),
+    Math.log(31),
+    Math.log(42),
+    Math.log(42),
+    Math.log(64),
+    Math.log(121),
+    Math.log(146),
+    Math.log(197),
+    Math.log(287),
+    Math.log(485),
+    Math.log(555),
+    Math.log(620)
+  ]*/
 ];
 
 var colors = ['rgba(173,255,47,1)', 'rgba(0,191,255,1)'];
@@ -125,6 +159,11 @@ var layout = {
     }
   },
   yaxis: {
+    tickfont: {
+      family: 'Lato',
+      size: 10,
+      color: 'rgb(0,0,0)'
+    },
     showgrid: false,
     zeroline: false,
     showline: false,
