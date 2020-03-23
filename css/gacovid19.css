@@ -24,30 +24,32 @@ p {
 }
 
 a {
-  color: rgba(255,255,255,0.7)!important;
+  color: rgba(0.08,0.17,0.26,1) !important;
+  text-decoration: underline !important;
+  font-weight: bolder !important;
 }
 
 .stats {
   font-weight: bold;
   font-size: 20pt;
   color: rgba(50,50,50,1) !important;
-  background-color: rgba(255,255,0,0.3);
+  background-color: rgba(144,240,198,0.5);
   padding: 5px;
 }
 
 .titlebar {
-  background-color: rgba(255,255,0,0.3);
+  background-color: rgba(255,255,255,0.5);
 }
 
 #head {
-  background-color: rgba(144,240,198,0.5) !important;
+  background-color: rgba(144,240,198,0.6) !important;
 }
 #plot {
-  background-color: rgb(100,230,255,0.3) !important;
+  background-color: rgb(255,255,255,0.35) !important;
 }
 #sidebar {
-  /*background-color: rgba(255,255,255,0.11);*/
-  background-color: rgba(144,240,198,0.5) !important;
+  background-color: rgba(255,255,255,0.5) !important;
+  /*background-color: rgba(144,240,198,0.5) !important;*/
   padding: 25px;
 }
 
