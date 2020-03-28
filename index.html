@@ -28,7 +28,7 @@
       <div class="col-sm-12 col-md-8">
         <div class="row mt-2 mr-2">
           <div id="head" class="col-sm-12 rounded">
-            <h3 id="top">Georgia Covid-19 Tracker <span id="links" class="ml-2">Plots:&nbsp;&nbsp;<a href="#timeline">Case Timeline</a> &mdash; <a href="#gaMap">County Distribution</a></span></h3>
+            <h3 id="top">Georgia Covid-19 Tracker <span id="links" class="ml-2">Plots:&nbsp;&nbsp;<a href="#timeline">Case Timeline</a> &mdash; <a href="#gaMap">County Case Distribution</a> &mdash; <a href="#gaMapDeaths">County Death Distribution</a></span></h3>
           </div>
         </div>
         <div id="plot" class="row mt-5 mr-2 p-2 rounded">
@@ -36,20 +36,24 @@
           <div id="timeline" class="col-sm-12 col-md-12"></div>
         </div>
         <div id="plot" class="row mt-5 mr-2 p-2 rounded">
-          <div class="col-sm-12 col-md-12 titlebar rounded">County Distribution <span id="links"><a href="#top" class="ml-2">Top</a></span></div>
+          <div class="col-sm-12 col-md-12 titlebar rounded">County Case Distribution <span id="links"><a href="#top" class="ml-2">Top</a></span></div>
           <div id="gaMap" class="col-sm-12 col-md-12"></div>
+        </div>
+        <div id="plot" class="row mt-5 mr-2 p-2 rounded">
+          <div class="col-sm-12 col-md-12 titlebar rounded">County Death Distribution <span id="links"><a href="#top" class="ml-2">Top</a></span></div>
+          <div id="gaMapDeaths" class="col-sm-12 col-md-12"></div>
         </div>
       </div>
       <div id="sidebar" class="col-sm-12 col-md-4 mt-2 rounded">
         <div class="row">
           <div class="col-md-12">
-            <span id="update">UPDATED: 03/27/20 12:50 ET</span>
+            <span id="update">UPDATED: 03/27/20 20:20 ET</span>
             <h4>Confirmed Cases</h4>
-            <p class="stats rounded text-center">2001</p>
+            <p class="stats rounded text-center">2198</p>
             <h4>Confirmed Deaths</h4>
-            <p class="stats rounded text-center">64</p>
+            <p class="stats rounded text-center">65</p>
             <h4>Hospitalized</h4>
-            <p class="stats rounded text-center">566</p>
+            <p class="stats rounded text-center">607</p>
             <h4>Sources</h4>
             <ul>
             <li>https://www.forsythnews.com/news/health-care/heres-latest-coronavirus-georgia/</li>
@@ -67,6 +71,8 @@
 </body>
 <script
   src="js/gacovid19.js"></script>
-  <script
-    src="js/gacovid19-map.js"></script>
+<script
+  src="js/gacovid19-map.js"></script>
+<script
+  src="js/gacovid19-map-deaths.js"></script>
 </html>
