@@ -43,6 +43,9 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         plot_bgcolor: 'transparent',
         paper_bgcolor:'transparent',
         margin: { r: 40, t: 0, b: 0, l: 0 },
+        title: {
+          text: "Unknown: 229"
+        },
         geo: {
             scope: 'usa',
             center: {lon: -83.5, lat: 32.658152},
