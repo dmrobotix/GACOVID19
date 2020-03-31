@@ -125,7 +125,7 @@ var yData = [
   ]*/
 ];
 
-var colors = ['rgba(0,0,0,1)', 'rgba(0,191,255,1)'];
+var colors = ['rgba(0,0,0,1)', 'rgba(0,191,255,1)','rgba(134, 33, 255, 1)'];
 
 var lineSize = [2, 2, 4, 2];
 
@@ -162,7 +162,7 @@ for ( var i = 0 ; i < xData.length ; i++ ) {
 }
 
 var layout = {
-  showlegend: false,
+  showlegend: true,
   plot_bgcolor: 'transparent',
   paper_bgcolor:'transparent',
 
