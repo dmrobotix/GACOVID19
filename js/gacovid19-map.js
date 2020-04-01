@@ -7,7 +7,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
     }
 
     var cityName = unpack(rows, 'county'),
-        cityCases = unpack(rows, 'case'),
+        cityCases = unpack(rows, 'cases'),
         cityLat = unpack(rows, 'lat'),
         cityLon = unpack(rows, 'lon'),
         color = [,"rgb(255,65,54)","rgb(133,20,75)","rgb(255,133,27)","lightgrey"],
