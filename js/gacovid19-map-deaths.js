@@ -52,7 +52,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
             },
             showland: true,
             showocean: false,
-            bgcolor: false,
+            bgcolor: 'transparent',
             landcolor: 'rgb(217, 217, 217)',
             subunitwidth: 1,
             countrywidth: 1,
