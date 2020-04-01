@@ -53,7 +53,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gatests.csv', function(e
     x: date,
     y: gphlTotal,
     name: 'Georgia Public Health Laboratory - Total',
-    marker: {color: 'rgba(50,171, 96, 0.7)'},
+    marker: {color: 'rgb(204,204,204)'},
     type: 'bar'
   };
 
