@@ -3,7 +3,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gatests.csv', function(e
       return rows.map(function(row) { return row[key]; });
   }
 
-  var commercial = unpack(rows, 'commercial'),
+  var commercial = unpack(rows, 'commercial lab'),
       commercialTotal = unpack(rows, 'commercial total'),
       gphl = unpack(rows, 'GPHL lab'),
       gphlTotal = unpack(rows, 'GPHL total'),
