@@ -85,4 +85,4 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gatests.csv', function(e
   };
 
   Plotly.newPlot('testing', data, layout);
-}
+});
