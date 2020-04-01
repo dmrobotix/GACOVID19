@@ -155,17 +155,6 @@ for ( var i = 0 ; i < xData.length ; i++ ) {
       width: lineSize[i]
     }
   };
-  var result2 = {
-    x: [xData[i][0]],
-    y: [yData[i][0]],
-    type: 'scatter',
-    mode: 'markers',
-    name:'',
-    marker: {
-      color: colors[i],
-      size: 12
-    }
-  };
   data.push(result);
 }
 
@@ -173,7 +162,13 @@ var layout = {
   showlegend: true,
   plot_bgcolor: 'transparent',
   paper_bgcolor:'transparent',
+  title: 'Georgia Confirmed Cases',
+  font: {
+    color: 'rgba(0,0,0,0.75)',
+    family: 'Lato',
+    size: 16,
 
+  },
   xaxis: {
     showline: true,
     showgrid: false,
@@ -193,6 +188,7 @@ var layout = {
     }
   },
   yaxis: {
+    title: 'Number of Confirmed',
     tickfont: {
       family: 'Lato',
       size: 10,
@@ -202,46 +198,9 @@ var layout = {
     zeroline: false,
     showline: false,
     showticklabels: true
-  },
-
-
-  annotations: [
-
-  ]
+  }
 };
 
-for( var i = 0 ; i < xData.length ; i++ ) {
-  var result = {
-    xref: 'paper',
-    x: 0.05,
-    y: yData[i][0],
-    xanchor: 'right',
-    yanchor: 'middle',
-    text: '',
-    showarrow: false,
-    font: {
-      family: 'Arial',
-      size: 16,
-      color: 'black'
-    }
-  };
-  var result2 = {
-    xref: 'paper',
-    x: 0.95,
-    y: yData[i][11],
-    xanchor: 'left',
-    yanchor: 'middle',
-    text: yData[i][11] +'%',
-    font: {
-      family: 'Arial',
-      size: 16,
-      color: 'black'
-    },
-    showarrow: false
-  };
-
-  layout.annotations.push(result);
-}
 
 var config = {responsive: true}
 

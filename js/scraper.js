@@ -239,7 +239,6 @@ async function main() {
   console.log("Starting...")
   let results = await downloadGDPH()
   let geocoords = await getGeocoordinates()
-  //console.log(geocoordinates)
   loadDOM(results,geocoords)
   console.log('Done!')
 }

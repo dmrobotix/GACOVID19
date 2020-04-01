@@ -16,7 +16,7 @@ h4 {
 
 ul {
   font-family: 'Roboto', sans-serif;
-  font-size:10pt;
+  font-size:8pt;
 }
 
 p {
@@ -53,9 +53,15 @@ a {
 #head {
   background-color: rgba(144,240,198,0.6) !important;
 }
-#plot {
-  background-color: rgb(255,255,255,0.35) !important;
+
+#footer {
+  color: rgba(255,255,255,0.6);
 }
+
+#plot {
+  background-color: rgba(144,240,198,0.5) !important;
+}
+
 #sidebar {
   background-color: rgba(255,255,255,0.5) !important;
   /*background-color: rgba(144,240,198,0.5) !important;*/
