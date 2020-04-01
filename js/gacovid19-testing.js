@@ -28,7 +28,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gatests.csv', function(e
   var trace1 = {
     x: date,
     y: commercial,
-    name: 'Commercial Testing',
+    name: 'Commercial Testing - Positive',
     marker: {color: 'rgb(55, 83, 109)'},
     type: 'bar'
   };
@@ -36,12 +36,28 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gatests.csv', function(e
   var trace2 = {
     x: date,
     y: gphl,
-    name: 'Georgia Public Health Laboratory',
+    name: 'Georgia Public Health Laboratory - Positive',
     marker: {color: 'rgb(26, 118, 255)'},
     type: 'bar'
   };
 
-  var data = [trace1, trace2];
+  var trace3 = {
+    x: date,
+    y: commercialTotal,
+    name: 'Commercial Testing - Total',
+    marker: {color: 'rgba(219, 64, 82, 0.7)'},
+    type: 'bar'
+  };
+
+  var trace4 = {
+    x: date,
+    y: gphlTotal,
+    name: 'Georgia Public Health Laboratory - Total',
+    marker: {color: 'rgba(50,171, 96, 0.7)'},
+    type: 'bar'
+  };
+
+  var data = [trace1, trace2, trace3, trace4];
 
 
   var layout = {
