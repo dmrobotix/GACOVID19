@@ -45,7 +45,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gatests.csv', function(e
     x: date,
     y: commercialTotal,
     name: 'Commercial Testing - Total',
-    marker: {color: 'rgba(219, 64, 82, 0.7)'},
+    marker: {color: 'rgba(100,100,100, 0.7)'},
     type: 'bar'
   };
 
