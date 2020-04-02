@@ -24,7 +24,8 @@ var dates = [
   '3/29/20',
   '3/30/20',
   '3/31/20',
-  '4/1/20'
+  '4/1/20',
+  '4/2/20'
 ]
 var xData = [
   dates,
@@ -58,7 +59,8 @@ var yData = [
     2683,
     3028,
     4117,
-    4748
+    4748,
+    5348
   ],
   [
     0,
@@ -85,7 +87,8 @@ var yData = [
     83,
     100,
     125,
-    154
+    154,
+    163
   ],
   [
     NaN,
@@ -112,25 +115,9 @@ var yData = [
     678,
     771,
     885,
-    1013
+    1013,
+    1056
   ]
-  /*[
-    Math.log(0),
-    Math.log(2),
-    Math.log(2),
-    Math.log(17),
-    Math.log(31),
-    Math.log(42),
-    Math.log(42),
-    Math.log(64),
-    Math.log(121),
-    Math.log(146),
-    Math.log(197),
-    Math.log(287),
-    Math.log(485),
-    Math.log(555),
-    Math.log(620)
-  ]*/
 ];
 
 var colors = ['rgba(0,0,0,1)', 'rgba(0,191,255,1)','rgba(134, 33, 255, 1)'];
@@ -139,26 +126,69 @@ var lineSize = [2, 2, 4, 2];
 
 var labels = ['Confirmed'];
 
-var data = [];
-
 var names = ['Cases', 'Deaths','Hospitalized'];
 
-for ( var i = 0 ; i < xData.length ; i++ ) {
-  var result = {
-    x: xData[i],
-    y: yData[i],
-    type: 'scatter',
-    mode: 'lines',
-    name: names[i],
-    line: {
-      color: colors[i],
-      width: lineSize[i]
-    }
-  };
-  data.push(result);
-}
+var trace1 = {
+  x: xData[0],
+  y: yData[0],
+  type: 'scatter',
+  mode: 'lines',
+  name: names[0],
+  line: {
+    color: colors[0],
+    width: lineSize[0]
+  }
+};
+
+var trace2 = {
+  x: xData[2],
+  y: yData[2],
+  type: 'scatter',
+  mode: 'lines',
+  name: names[2],
+  line: {
+    color: colors[2],
+    width: lineSize[2]
+  }
+};
+
+var trace3 = {
+  x: xData[1],
+  y: yData[1],
+  xaxis: 'x2',
+  yaxis: 'y2',
+  type: 'scatter',
+  mode: 'lines',
+  name: names[1],
+  line: {
+    color: colors[1],
+    width: lineSize[1]
+  }
+};
+
+var data = [trace1, trace2, trace3];
 
 var layout = {
+  yaxis2: {
+    domain: [0.6,0.95],
+    anchor: 'x2',
+    showgrid: false,
+    tickfont: {
+      family: 'Lato',
+      size: 10,
+      color: 'rgba(0,0,0,0.6)'
+    }
+  },
+  xaxis2: {
+    domain: [0.1,0.3],
+    anchor: 'y2',
+    showgrid: false,
+    tickfont: {
+      family: 'Lato',
+      size: 10,
+      color: 'rgba(0,0,0,0.6)'
+    }
+  },
   showlegend: true,
   plot_bgcolor: 'transparent',
   paper_bgcolor:'transparent',
@@ -173,18 +203,18 @@ var layout = {
     showline: true,
     showgrid: false,
     showticklabels: true,
-    linecolor: 'rgb(0,0,0)',
+    linecolor: 'rgba(0,0,0,0.6)',
     linewidth: 2,
     autotick: false,
     automargin: true,
     ticks: 'outside',
-    tickcolor: 'rgb(0,0,0)',
+    tickcolor: 'rgba(0,0,0,0.6)',
     tickwidth: 2,
     ticklen: 5,
     tickfont: {
       family: 'Lato',
       size: 10,
-      color: 'rgb(0,0,0)'
+      color: 'rgba(0,0,0,0.6)'
     }
   },
   yaxis: {
@@ -192,7 +222,7 @@ var layout = {
     tickfont: {
       family: 'Lato',
       size: 10,
-      color: 'rgb(0,0,0)'
+      color: 'rgba(0,0,0,0.6)'
     },
     showgrid: false,
     zeroline: false,
