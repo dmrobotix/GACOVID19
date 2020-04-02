@@ -1,22 +1,26 @@
 "use strict"
 const rp = require('request-promise-native')
-//const fsPromises = require('fs').promises
 const fs = require('fs')
-
 const cheerio = require('cheerio')
 
 async function downloadGDPH() {
   const url = "https://d20s4vd27d0hk0.cloudfront.net/?initialWidth=436&childId=covid19dashdph&parentTitle=COVID-19%20Daily%20Status%20Report%20%7C%20Georgia%20Department%20of%20Public%20Health&parentUrl=https%3A%2F%2Fdph.georgia.gov%2Fcovid-19-daily-status-report%3Ffbclid%3DIwAR0vLO45zcpjlPKaQR3sc-MyZtqsnE4TfSDNkCUb8X6xDkgxNJyOKaEkhPE"
+
   const today = new Date()
   // date format: YYYYMMD-HHMMSS
   const date = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate()+'-'+today.getHours()+''+today.getMinutes()+''+today.getSeconds()
+
   const filename = "raw/gdph-raw-data-" + date + ".html"
 
   console.log('Downloading HTML from Georgia Department of Health')
   const results = await rp({uri: url})
 
   // save local version
-  await fs.writeFile(filename, results)
+  try {
+    await fs.writeFile(filename, results)
+  } catch (err) {
+    console.log(err)
+  }
 
   return results
 }
@@ -154,6 +158,7 @@ async function loadDOM(results, geocoords) {
     }
 
     // county cases
+    var unknown = 0
     if (i == 1) {
       $(this).find('tr').each(function(i,e) {
         if (i !== 0) {
@@ -172,14 +177,25 @@ async function loadDOM(results, geocoords) {
               countyTable.lat = lat
               countyTable.lon = lon
 
+              if ($(this).text() == "Unknown") {
+                unknown = 1;
+              }
+
             } else if (i == 1) {
               let cases = countyTable.cases
               cases.push($(this).text())
               countyTable.cases = cases
+              if (unknown == 1) {
+                console.log("Unknown Cases: " + $(this).text())
+              }
             } else if (i == 2) {
               let deaths = countyTable.deaths
               deaths.push($(this).text())
               countyTable.deaths = deaths
+              if (unknown == 1) {
+                console.log("Unknown Deaths: " + $(this).text())
+                unknown = 0
+              }
             }
           })
         }
@@ -207,12 +223,42 @@ async function loadDOM(results, geocoords) {
   const csvCountyTable = CSV(countyTable)
   const csvDeathStatsTable = CSV(deathStatsTable)
 
-  await fs.writeFile(countyDateFilename, csvCountyTable)
-  await fs.writeFile(countyFilename, csvCountyTable)
-  await fs.writeFile(deathsStatsDateFilename, csvDeathStatsTable)
-  await fs.writeFile(deathsStatsFilename, csvDeathStatsTable)
-  await fs.appendFile(summaryFilename, summaryLine)
-  await fs.appendFile(testingFilename, testingLine)
+  try {
+    await fs.writeFile(countyDateFilename, csvCountyTable)
+  } catch (err) {
+    console.log(err)
+  }
+
+  try {
+    await fs.writeFile(countyFilename, csvCountyTable)
+  } catch (err) {
+    console.log(err)
+  }
+
+  try {
+    await fs.writeFile(deathsStatsDateFilename, csvDeathStatsTable)
+  } catch (err) {
+    console.log(err)
+  }
+
+  try {
+    await fs.writeFile(deathsStatsFilename, csvDeathStatsTable)
+  } catch (err) {
+    console.log(err)
+  }
+
+  try {
+    await fs.appendFile(summaryFilename, summaryLine)
+  } catch (err) {
+    console.log(err)
+  }
+
+  try {
+    await fs.appendFile(testingFilename, testingLine)
+  } catch (err) {
+    console.log(err)
+  }
+
 }
 
 function CSV(object) {
