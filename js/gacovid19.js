@@ -68,7 +68,7 @@ var yData = [
     5967,
     6383,
     6742,
-    7314
+    7558
   ],
   [
     0,
@@ -100,7 +100,7 @@ var yData = [
     198,
     208,
     219,
-    229
+    294
   ],
   [
     NaN,
@@ -132,17 +132,18 @@ var yData = [
     1222,
     1266,
     1296,
-    1332
+    1332,
+    1393
   ]
 ];
 
 document.getElementById('cases').innerHTML = yData[0][yData[0].length-1];
 document.getElementById('deaths').innerHTML = yData[1][yData[1].length-1];
 document.getElementById('hospitalized').innerHTML = yData[2][yData[2].length-1];
-document.getElementById('unknown-cases').innerHTML = 320;
+document.getElementById('unknown-cases').innerHTML = 309;
 document.getElementById('unknown-deaths').innerHTML = 5;
-document.getElementById('unknown-cases-percent').innerHTML = 95.6;
-document.getElementById('unknown-deaths-percent').innerHTML = 37.7;
+document.getElementById('unknown-cases-percent').innerHTML = 97.5;
+document.getElementById('unknown-deaths-percent').innerHTML = 41;
 
 var colors = ['rgba(0,0,0,1)', 'rgba(0,191,255,1)','rgba(134, 33, 255, 1)'];
 
