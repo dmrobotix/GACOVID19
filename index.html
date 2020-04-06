@@ -48,9 +48,9 @@
                 <div class="col-md-4"><p class="stats-header rounded text-center">Hospitalized</p></div>
               </div>
             </div>
-            <div class="col-md-4"><p class="stats rounded text-center">6742</p></div>
-            <div class="col-md-4"><p class="stats rounded text-center">219</p></div>
-            <div class="col-md-4"><p class="stats rounded text-center">1296</p></div>
+            <div class="col-md-4"><p class="stats rounded text-center" id="cases">6742</p></div>
+            <div class="col-md-4"><p class="stats rounded text-center" id="deaths">219</p></div>
+            <div class="col-md-4"><p class="stats rounded text-center" id="hospitalized">1296</p></div>
           </div>
         </div>
         <div id="plot" class="row mr-2 p-2 rounded">
@@ -67,8 +67,8 @@
             <span id="links">
               <a href="#top" class="ml-2">Top</a>
             </span>
-            <p>Percent of counties with confirmed infections: 94%</p>
-            <p>Unknown county: 283</p>
+            <p>Percent of counties with confirmed infections: <span id="unknown-cases-percent">94</span>%</p>
+            <p>Unknown county: <span id="unknown-cases">283</span></p>
           </div>
           <div id="gaMap" class="col-sm-12 col-md-12"></div>
         </div>
@@ -78,8 +78,8 @@
             <span id="links">
               <a href="#top" class="ml-2">Top</a>
             </span>
-            <p>Percent of counties with confirmed deaths: 39%</p>
-            <p>Unknown county: 5</p>
+            <p>Percent of counties with confirmed deaths: <span id="unknown-deaths-percent">39</span>%</p>
+            <p>Unknown county: <span id="unknown-deaths">5</span></p>
           </div>
           <div id="gaMapDeaths" class="col-sm-12 col-md-12"></div>
         </div>

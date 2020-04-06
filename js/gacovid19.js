@@ -28,7 +28,8 @@ var dates = [
   '4/2/20',
   '4/3/20',
   '4/4/20',
-  '4/5/20'
+  '4/5/20',
+  '4/6/20'
 ]
 var xData = [
   dates,
@@ -66,7 +67,8 @@ var yData = [
     5444,
     5967,
     6383,
-    6742
+    6742,
+    7314
   ],
   [
     0,
@@ -97,7 +99,8 @@ var yData = [
     176,
     198,
     208,
-    219
+    219,
+    229
   ],
   [
     NaN,
@@ -128,9 +131,18 @@ var yData = [
     1129,
     1222,
     1266,
-    1296
+    1296,
+    1332
   ]
 ];
+
+document.getElementById('cases').innerHTML = yData[0][yData[0].length-1];
+document.getElementById('deaths').innerHTML = yData[1][yData[1].length-1];
+document.getElementById('hospitalized').innerHTML = yData[2][yData[2].length-1];
+document.getElementById('unknown-cases').innerHTML = 320;
+document.getElementById('unknown-deaths').innerHTML = 5;
+document.getElementById('unknown-cases-percent').innerHTML = 95.6;
+document.getElementById('unknown-deaths-percent').innerHTML = 37.7;
 
 var colors = ['rgba(0,0,0,1)', 'rgba(0,191,255,1)','rgba(134, 33, 255, 1)'];
 
