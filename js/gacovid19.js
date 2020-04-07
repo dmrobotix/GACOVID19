@@ -39,7 +39,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
 
   var trace2 = {
     x: date,
-    y: deaths,
+    y: hospitalized
     type: 'scatter',
     mode: 'lines',
     name: names[2],
@@ -51,7 +51,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
 
   var trace3 = {
     x: date,
-    y: hospitalized,
+    y: deaths,
     xaxis: 'x2',
     yaxis: 'y2',
     type: 'scatter',
