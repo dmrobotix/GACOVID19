@@ -13,7 +13,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         color = [,"rgb(255,65,54)","rgb(133,20,75)","rgb(255,133,27)","lightgrey"],
         citySize = [],
         hoverText = [],
-        scale = 6;
+        scale = 10;
 
     for ( var i = 0 ; i < cityCases.length; i++) {
         var currentSize = cityCases[i] / scale;
