@@ -20,7 +20,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
   var trace1 = {
     x: date,
     y: diffCases,
-    name: 'Change in Confirmed Cases',
+    name: 'Confirmed Cases',
     marker: {color: 'rgb(55, 83, 109)'},
     type: 'bar'
   };
@@ -30,7 +30,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
     y: diffDeaths,
     xaxis: 'x2',
     yaxis: 'y2',
-    name: 'Change in Confirmed Deaths',
+    name: 'Confirmed Deaths',
     marker: {color: 'rgb(26, 118, 255)'},
     type: 'bar'
   };
@@ -60,7 +60,6 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
       }
     },
     yaxis: {
-      showgrid: false,
       title: 'Daily Change',
       titlefont: {
         size: 16,
