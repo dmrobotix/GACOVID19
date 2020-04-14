@@ -17,7 +17,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         scale = 10;
 
     for ( var i = 0 ; i < cityCases.length; i++) {
-        var currentSize = (cityCases[i] / pop);
+        var currentSize = (cityCases[i] / cityPop);
         var currentText = cityName[i] + " County<br>" + "Cases: " + cityCases[i] + "<br>Population: " + cityPop[i];
         citySize.push(currentSize);
         hoverText.push(currentText);
