@@ -28,6 +28,8 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
   var trace2 = {
     x: date,
     y: diffDeaths,
+    xaxis: 'x2',
+    yaxis: 'y2',
     name: 'Change in Confirmed Deaths',
     marker: {color: 'rgb(26, 118, 255)'},
     type: 'bar'
