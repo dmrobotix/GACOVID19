@@ -20,7 +20,20 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         var currentText = cityName[i] + " County<br>" + "Cases: " + cityCases[i];
         citySize.push(currentSize);
         hoverText.push(currentText);
+
+        if (cityName[i] == "Unknown") {
+          var unknownCases = cityCases[i];
+          var unknownCasesPercent = ((i-1)/159*100).toFixed(2);
+        }
+
+        if (cityName[i] == "Non-Georgia Resident") {
+          var nonGeorgiaCases = cityCases[i];
+        }
     }
+
+    document.getElementById('unknown-cases').innerHTML = unknownCases;
+    document.getElementById('unknown-cases-percent').innerHTML = unknownCasesPercent;
+    document.getElementById('nongeorgia-cases').innerHTML = nonGeorgiaCases;
 
     var data = [{
         type: 'scattergeo',

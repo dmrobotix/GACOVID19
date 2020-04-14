@@ -17,7 +17,7 @@ async function downloadGDPH() {
 
   // save local version
   try {
-    await fs.writeFile(filename, results)
+    //await fs.writeFile(filename, results)
   } catch (err) {
     console.log(err)
   }
@@ -144,13 +144,13 @@ async function loadDOM(results, geocoords) {
           $(this).find('td').each(function(i,e) {
             if ($(this).text() == "Total") {
               console.log($(this).siblings().text())
-              summaryTable.total = $(this).siblings().text()
+              summaryTable.total = $(this).siblings().text().split(' ')[0]
             } else if ($(this).text() == "Hospitalized") {
-              console.log($(this).siblings().text())
-              summaryTable.hospitalized = $(this).siblings().text()
+              console.log($(this).siblings().text().split(' ')[0])
+              summaryTable.hospitalized = $(this).siblings().text().split(' ')[0]
             } else if ($(this).text() == "Deaths") {
-              console.log($(this).siblings().text())
-              summaryTable.deaths = $(this).siblings().text()
+              console.log($(this).siblings().text().split(' ')[0])
+              summaryTable.deaths = $(this).siblings().text().split(' ')[0]
             }
           })
         }
@@ -208,10 +208,11 @@ async function loadDOM(results, geocoords) {
 
   // write files
   const summaryLine = "\n"+summaryTable.total+","+summaryTable.hospitalized+","+summaryTable.deaths+","+summaryTable.date
+  const consolidatedLine = summaryTable.total+","+summaryTable.hospitalized+","+summaryTable.deaths
   const testingLine = "\n"+testingTable.commercial+","+testingTable.gphl+","+testingTable.date
 
   const today = new Date()
-  const fileDate = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate()+'-'+today.getHours()+''+today.getMinutes()+''+today.getSeconds()
+  const fileDate = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()
 
   const testingFilename = "csv/gatests.csv"
   const deathsStatsDateFilename = "csv/ga-deaths-stats"+fileDate+".csv"
@@ -219,11 +220,12 @@ async function loadDOM(results, geocoords) {
   const summaryFilename = "csv/gasummary.csv"
   const countyFilename = "csv/gacounties.csv"
   const countyDateFilename = "csv/gacounties-"+fileDate+".csv"
+  const consolidatedFilename = "csv/ga-stats-consolidated.csv"
 
   const csvCountyTable = CSV(countyTable)
   const csvDeathStatsTable = CSV(deathStatsTable)
 
-  try {
+  /*try {
     await fs.writeFile(countyDateFilename, csvCountyTable)
   } catch (err) {
     console.log(err)
@@ -255,6 +257,29 @@ async function loadDOM(results, geocoords) {
 
   try {
     await fs.appendFile(testingFilename, testingLine)
+  } catch (err) {
+    console.log(err)
+  }*/
+
+  try {
+    const data = fs.readFileSync(consolidatedFilename,'UTF-8')
+    const lines = data.split(/\r?\n/)
+    const today = new Date()
+    const dateOnly = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()
+    var output = ''
+    lines.forEach((line) => {
+      const row = line.split(',')
+      if (row.length > 1 && row[0] != dateOnly) {
+        output += row+"\n"
+      }
+    })
+    output += dateOnly+","+consolidatedLine+"\n"
+  } catch (err) {
+    console.log(err)
+  }
+
+  try {
+    await fs.writeFile(consolidatedFilename, output)
   } catch (err) {
     console.log(err)
   }
