@@ -29,7 +29,8 @@ async function getGeocoordinates() {
   let geoData = {
     county: [],
     lat: [],
-    lon: []
+    lon: [],
+    pop: []
   }
   try {
     const data = fs.readFileSync('csv/county-geocoordinates.csv','UTF-8')
@@ -40,12 +41,15 @@ async function getGeocoordinates() {
       let county = geoData.county
       let lat = geoData.lat
       let lon = geoData.lon
+      let pop = geoData.pop
       county.push(row[0])
       lat.push(row[1])
       lon.push(row[2])
+      pop.push(row[3])
       geoData.county = county
       geoData.lat = lat
       geoData.lon = lon
+      geoData.pop = pop
     })
   } catch (err) {
     console.log(err)
@@ -71,7 +75,8 @@ async function loadDOM(results, geocoords) {
     cases: [],
     deaths: [],
     lat: [],
-    lon: []
+    lon: [],
+    pop: []
   }
 
   var testingTable = {
@@ -167,6 +172,7 @@ async function loadDOM(results, geocoords) {
               let county = countyTable.county
               let lat = countyTable.lat
               let lon = countyTable.lon
+              let pop = countyTable.pop
 
               county.push($(this).text())
               countyTable.county = county
@@ -174,8 +180,10 @@ async function loadDOM(results, geocoords) {
               const found = geocoords.county.findIndex(element => element == $(this).text())
               lat.push(geocoords.lat[found])
               lon.push(geocoords.lon[found])
+              pop.push(geocoords.pop[found])
               countyTable.lat = lat
               countyTable.lon = lon
+              countyTable.pop = pop
 
               if ($(this).text() == "Unknown") {
                 unknown = 1;
@@ -212,7 +220,7 @@ async function loadDOM(results, geocoords) {
   const testingLine = "\n"+testingTable.commercial+","+testingTable.gphl+","+testingTable.date
 
   const today = new Date()
-  const fileDate = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()
+  const fileDate = (today.getMonth()+1)+today.getDate()+today.getFullYear()+'-'+today.getHours()+today.getMinutes()+today.getSeconds()
 
   const testingFilename = "csv/gatests.csv"
   const deathsStatsDateFilename = "csv/ga-deaths-stats"+fileDate+".csv"
