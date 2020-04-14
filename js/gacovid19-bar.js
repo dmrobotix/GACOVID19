@@ -39,6 +39,11 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
   var layout = {
     plot_bgcolor: 'transparent',
     paper_bgcolor:'transparent',
+    grid: {
+      rows:1,
+      columns:2,
+      pattern: 'independent'
+    },
     title: 'Daily Change in Confirmed Cases & Deaths',
     font: {
       color: 'rgba(0,0,0,0.75)',
