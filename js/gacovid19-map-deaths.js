@@ -22,8 +22,8 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         hoverText.push(currentText);
 
         var unknownDeaths = 0;
-        console.log(Number(cityCases[i]))
-        if(cityCases[i] != 0) {
+        console.log(Number(cityCases[i]) > 0)
+        if(Number(cityCases[i]) > 0) {
           unknownDeaths += 1;
         }
         var unknownDeathsPercent = (unknownDeaths/159*100).toFixed(2);
