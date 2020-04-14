@@ -35,8 +35,10 @@
                 <a href="#gaMap">County Case Distribution</a> &mdash;
                 <a href="#gaMapDeaths">County Death Distribution</a> &mdash;
                 <a href="#testing">Covid-19 Testing Timeline</a></span>
+                <a href="#gaMapper100k">County Case Distribution Per Capita</a> &mdash;
+                <a href="#change">Change in Confirmed Cases & Deaths</a> &mdash;
               </h3>
-            <span id="update">UPDATED: <span id="updated-time">04/14/20 16:40</span> ET</span>
+            <span id="update">UPDATED: <span id="updated-time">04/14/20 19:21</span> ET</span>
           </div>
         </div>
         <div class="col-md-12">
@@ -56,6 +58,10 @@
         <div id="plot" class="row mr-2 p-2 rounded">
           <div class="col-sm-12 col-md-12 rounded"><span id="links"><a href="#top" class="ml-2">Top</a></span></div>
           <div id="timeline" class="col-sm-12 col-md-12"></div>
+        </div>
+        <div id="plot" class="row mt-2 mr-2 p-2 rounded">
+          <div class="col-sm-12 col-md-12 rounded"><span id="links"><a href="#top" class="ml-2">Top</a></span></div>
+          <div id="change" class="col-sm-12 col-md-12"></div>
         </div>
         <div id="plot" class="row mt-2 mr-2 p-2 rounded">
           <div class="col-sm-12 col-md-12 rounded"><span id="links"><a href="#top" class="ml-2">Top</a></span></div>
@@ -85,6 +91,15 @@
           </div>
           <div id="gaMapDeaths" class="col-sm-12 col-md-12"></div>
         </div>
+        <div id="plot" class="row mt-2 mr-2 p-2 rounded">
+          <div class="col-sm-12 col-md-12 titlebar rounded">
+            County Case Distribution Per Capita
+            <span id="links">
+              <a href="#top" class="ml-2">Top</a>
+            </span>
+          </div>
+          <div id="gaMapper100k" class="col-sm-12 col-md-12"></div>
+        </div>
         <div id="footer" class="col-md-12 mt-2">
           <h4 class="stats-header">Sources</h4>
           <ul>
@@ -107,6 +122,10 @@
   src="js/gacovid19-map.js"></script>
 <script
   src="js/gacovid19-map-deaths.js"></script>
-  <script
-    src="js/gacovid19-testing.js"></script>
+<script
+  src="js/gacovid19-testing.js"></script>
+<script
+  src="js/gacovid19-bar.js"></script>
+<script
+  src="js/gacovid19-map-per100k.js"></script>
 </html>
