@@ -70,6 +70,23 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/ga-stats-consolidated.cs
         color: 'rgb(10, 10, 10)'
       }
     },
+    xaxis2: {
+      tickfont: {
+        size: 14,
+        color: 'rgb(10, 10, 10)'
+      }
+    },
+    yaxis2: {
+      title: 'Daily Change',
+      titlefont: {
+        size: 16,
+        color: 'rgb(10, 10, 10)'
+      },
+      tickfont: {
+        size: 14,
+        color: 'rgb(10, 10, 10)'
+      }
+    },
     legend: {
       x: 0,
       y: 1.0,
