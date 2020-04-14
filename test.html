@@ -36,7 +36,7 @@
                 <a href="#gaMapDeaths">County Death Distribution</a> &mdash;
                 <a href="#testing">Covid-19 Testing Timeline</a></span>
               </h3>
-            <span id="update">UPDATED: 03/1/20 14:50 ET</span>
+            <span id="update">UPDATED: <span id="updated-time">04/14/20 16:40</span> ET</span>
           </div>
         </div>
         <div class="col-md-12">
@@ -48,9 +48,9 @@
                 <div class="col-md-4"><p class="stats-header rounded text-center">Hospitalized</p></div>
               </div>
             </div>
-            <div class="col-md-4"><p class="stats rounded text-center">4638</p></div>
-            <div class="col-md-4"><p class="stats rounded text-center">139</p></div>
-            <div class="col-md-4"><p class="stats rounded text-center">952</p></div>
+            <div class="col-md-4"><p class="stats rounded text-center" id="cases"></p></div>
+            <div class="col-md-4"><p class="stats rounded text-center" id="deaths"></p></div>
+            <div class="col-md-4"><p class="stats rounded text-center" id="hospitalized"></p></div>
           </div>
         </div>
         <div id="plot" class="row mr-2 p-2 rounded">
@@ -59,14 +59,34 @@
         </div>
         <div id="plot" class="row mt-2 mr-2 p-2 rounded">
           <div class="col-sm-12 col-md-12 rounded"><span id="links"><a href="#top" class="ml-2">Top</a></span></div>
+          <div id="change" class="col-sm-12 col-md-12"></div>
+        </div>
+        <div id="plot" class="row mt-2 mr-2 p-2 rounded">
+          <div class="col-sm-12 col-md-12 rounded"><span id="links"><a href="#top" class="ml-2">Top</a></span></div>
           <div id="testing" class="col-sm-12 col-md-12"></div>
         </div>
-        <div id="plot" class="row mt-5 mr-2 p-2 rounded">
-          <div class="col-sm-12 col-md-12 titlebar rounded">County Case Distribution <span id="links"><a href="#top" class="ml-2">Top</a></span><p>Unknown County: 516</p></div>
+        <div id="plot" class="row mt-2 mr-2 p-2 rounded">
+          <div class="col-sm-12 col-md-12 titlebar rounded">
+            County Case Distribution
+            <span id="links">
+              <a href="#top" class="ml-2">Top</a>
+            </span>
+            <p>Percent of counties with confirmed infections: <span id="unknown-cases-percent"></span>%</p>
+            <p>Unknown county: <span id="unknown-cases"></span></p>
+            <p>Non-Georgia Resident: <span id="nongeorgia-cases"></span></p>
+          </div>
           <div id="gaMap" class="col-sm-12 col-md-12"></div>
         </div>
-        <div id="plot" class="row mt-5 mr-2 p-2 rounded">
-          <div class="col-sm-12 col-md-12 titlebar rounded">County Death Distribution <span id="links"><a href="#top" class="ml-2">Top</a></span><p>Unknown County: 2</p></div>
+        <div id="plot" class="row mt-2 mr-2 p-2 rounded">
+          <div class="col-sm-12 col-md-12 titlebar rounded">
+            County Death Distribution
+            <span id="links">
+              <a href="#top" class="ml-2">Top</a>
+            </span>
+            <p>Percent of counties with confirmed deaths: <span id="unknown-deaths-percent"></span>%</p>
+            <p>Unknown county: <span id="unknown-deaths"></span></p>
+            <p>Non-Georgia Resident: <span id="nongeorgia-deaths"></span></p>
+          </div>
           <div id="gaMapDeaths" class="col-sm-12 col-md-12"></div>
         </div>
         <div id="footer" class="col-md-12 mt-2">

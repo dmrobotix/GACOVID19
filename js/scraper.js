@@ -17,7 +17,7 @@ async function downloadGDPH() {
 
   // save local version
   try {
-    //await fs.writeFile(filename, results)
+    await fs.writeFile(filename, results)
   } catch (err) {
     console.log(err)
   }
@@ -225,7 +225,7 @@ async function loadDOM(results, geocoords) {
   const csvCountyTable = CSV(countyTable)
   const csvDeathStatsTable = CSV(deathStatsTable)
 
-  /*try {
+  try {
     await fs.writeFile(countyDateFilename, csvCountyTable)
   } catch (err) {
     console.log(err)
@@ -259,7 +259,7 @@ async function loadDOM(results, geocoords) {
     await fs.appendFile(testingFilename, testingLine)
   } catch (err) {
     console.log(err)
-  }*/
+  }
 
   try {
     const data = fs.readFileSync(consolidatedFilename,'UTF-8')
