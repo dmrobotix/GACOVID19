@@ -22,6 +22,7 @@ Plotly.d3.csv('https://www.margotbits.com/gacovid19/csv/gacounties.csv', functio
         hoverText.push(currentText);
 
         var unknownDeaths = 0;
+        console.log(cityCases[i])
         if(cityCases[i] != 0) {
           unknownDeaths += 1;
         }
