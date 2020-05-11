@@ -9,6 +9,16 @@ async function downloadGDPH() {
   const today = new Date()
   // date format: YYYYMMD-HHMMSS
   const date = today.getFullYear()+''+(today.getMonth()+1)+''+today.getDate()+'-'+today.getHours()+''+today.getMinutes()+''+today.getSeconds()
+  const dateForFile = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear()+' '+today.getHours()+':'+today.getMinutes()
+
+  // save date accessed
+  const datefilename = "js/dateaccessed.js"
+  const dateScript = "const str = '"+datefilename+"'; document.getElementById('updated-time').innerHTML = str;"
+  try {
+    await fs.writeFile(datefilename, dateForFile)
+  } catch (err) {
+    console.log(err)
+  }
 
   const filename = "raw/gdph-raw-data-" + date + ".html"
 
