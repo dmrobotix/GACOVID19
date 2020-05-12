@@ -15,7 +15,7 @@ async function downloadGDPH() {
   const datefilename = "js/dateaccessed.js"
   const dateScript = "const str = '"+datefilename+"'; document.getElementById('updated-time').innerHTML = str;"
   try {
-    await fs.writeFile(datefilename, dateForFile)
+    await fs.writeFile(dateScript, dateForFile)
   } catch (err) {
     console.log(err)
   }
