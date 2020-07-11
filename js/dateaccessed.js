@@ -1,1 +1,1 @@
-const str = '7/10/2020 12:34'; document.getElementById('updated-time').innerHTML = str;
+const str = '7/10/2020 20:6'; document.getElementById('updated-time').innerHTML = str;
