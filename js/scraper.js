@@ -4,7 +4,8 @@ const fs = require('fs')
 const cheerio = require('cheerio')
 
 async function downloadGDPH() {
-  const url = "https://d20s4vd27d0hk0.cloudfront.net/?initialWidth=436&childId=covid19dashdph&parentTitle=COVID-19%20Daily%20Status%20Report%20%7C%20Georgia%20Department%20of%20Public%20Health&parentUrl=https%3A%2F%2Fdph.georgia.gov%2Fcovid-19-daily-status-report%3Ffbclid%3DIwAR0vLO45zcpjlPKaQR3sc-MyZtqsnE4TfSDNkCUb8X6xDkgxNJyOKaEkhPE"
+  //const url = "https://d20s4vd27d0hk0.cloudfront.net/?initialWidth=436&childId=covid19dashdph&parentTitle=COVID-19%20Daily%20Status%20Report%20%7C%20Georgia%20Department%20of%20Public%20Health&parentUrl=https%3A%2F%2Fdph.georgia.gov%2Fcovid-19-daily-status-report%3Ffbclid%3DIwAR0vLO45zcpjlPKaQR3sc-MyZtqsnE4TfSDNkCUb8X6xDkgxNJyOKaEkhPE"
+  const url = "https://ga-covid19.ondemand.sas.com/?initialWidth=839&childId=covid19dashdph&parentTitle=COVID-19%20Status%20Report%20%7C%20Georgia%20Department%20of%20Public%20Health&parentUrl=https%3A%2F%2Fdph.georgia.gov%2Fcovid-19-daily-status-report"
 
   const today = new Date()
   // date format: YYYYMMD-HHMMSS
